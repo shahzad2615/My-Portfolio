@@ -170,7 +170,7 @@ const About: React.FC = () => {
               </motion.div>
               
               {/* Profile Image Container */}
-              <div className="absolute inset-4 rounded-full overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center border-4 border-white/10">
+              <div className="absolute  rounded-full overflow-hidden bg-gradient-to-br from-gray-800 to-gray-900 flex items-center justify-center border-4 border-white/10">
                 {/* Replace with actual image */}
                 <div className="w-full h-full bg-gradient-to-br from-cyan-400/20 to-purple-500/20 flex items-center justify-center text-6xl text-white/80">
                 <img src={shaizuimage} alt="Passport photo" />
@@ -238,8 +238,14 @@ const About: React.FC = () => {
                   My Journey
                 </h3>
                 <p className="text-gray-200 leading-relaxed text-lg">
-                  I'm a passionate Software Developer with a Bachelor's degree in Information Technology from Vikas College (CGPA: 9.01). Currently working as a MERN Stack Developer at Utkarsh Global Foundation, I specialize in building scalable web applications that combine technical excellence with exceptional user experiences.
-                </p>
+  I'm a passionate Software Developer with a Bachelor's degree in Information Technology from Vikas College (CGPA: 9.01). 
+  Currently working as a MERN Stack Developer at Utkarsh Global Foundation, I specialize in building scalable web applications 
+  that combine technical excellence with exceptional user experiences. Alongside my development work, I have solved 
+  <span className="font-semibold text-cyan-400"> 450+ Data Structures and Algorithms problems </span> across platforms such 
+  as <span className="font-semibold">LeetCode</span> and <span className="font-semibold">GeeksforGeeks</span>, and I 
+  consistently participate in coding contests to sharpen my problem-solving and algorithmic skills.
+</p>
+
               </div>
             </motion.div>
 
@@ -276,7 +282,7 @@ const About: React.FC = () => {
                   My Passion
                 </h3>
                 <p className="text-gray-200 leading-relaxed text-lg">
-                  Beyond coding, I'm deeply passionate about problem-solving and continuous learning. With 450+ DSA problems solved and 2.5K+ LinkedIn followers, I actively engage with the developer community, sharing insights and supporting fellow developers in their journey.
+                  Beyond coding, I'm deeply passionate about problem-solving and continuous learning. With 450+ DSA problems solved and 3.2K+ LinkedIn Connections , I actively engage with the developer community, sharing insights and supporting fellow developers in their journey.
                 </p>
               </div>
             </motion.div>
@@ -285,13 +291,13 @@ const About: React.FC = () => {
 
         {/* Skills Section */}
         <motion.div
-          className="mb-20"
+          className="mb-20 "
           initial={{ opacity: 0, y: 50 }}
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h3 className="text-4xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500 mb-12">
+          <h3 className="text-4xl font-bold text-center text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500 mb-12 ">
             Technical Expertise
           </h3>
           

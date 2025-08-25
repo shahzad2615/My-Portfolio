@@ -42,7 +42,7 @@ const Hero: React.FC = () => {
             animate={{ scale: 1 }}
             transition={{ duration: 0.5 }}
           >
-            Hi, I'm{' '}
+            Hello, I'm{' '}
             <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 to-purple-500">
               Shahzad Ali
             </span>{' '}

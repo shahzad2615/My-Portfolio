@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
-import { Menu, X, Home, User, Code, Briefcase, Mail } from 'lucide-react';
+import { Menu, X, Home, User, Code, Briefcase, Mail, Award } from 'lucide-react';
+import { href } from 'react-router-dom';
 
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -18,9 +19,10 @@ const Navbar: React.FC = () => {
   const navItems = [
     { name: 'Home', icon: Home, href: '#home' },
     { name: 'About', icon: User, href: '#about' },
-    { name: 'Skills', icon: Code, href: '#skills' },
+    { name: 'Skills', icon: Code, href: '/skills' },
     { name: 'Projects', icon: Briefcase, href: '#projects' },
     { name: 'Experience', icon: Briefcase, href: '#experience' },
+    {name:"Achievements",icon:Award,href:"Achievment"},
     { name: 'Contact', icon: Mail, href: '#contact' },
   ];
 
