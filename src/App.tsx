@@ -13,6 +13,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import Preloader from './components/Preloader';
+import AdvancedSkillsSection from './components/AdvancedSkillsSection';
 
 function App() {
   useEffect(() => {
@@ -38,6 +39,9 @@ function App() {
               <>
                 <Hero />
                 <About />
+                <AdvancedSkillsSection/>
+                
+                
               </>
             }
           />
