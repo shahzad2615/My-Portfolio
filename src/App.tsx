@@ -1,5 +1,5 @@
 import React, { useEffect } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, Navigate } from 'react-router-dom';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 // import NeuronCursor from './components/NeuronCursor';
@@ -14,6 +14,7 @@ import Footer from './components/Footer';
 import ScrollToTop from './components/ScrollToTop';
 import Preloader from './components/Preloader';
 import AdvancedSkillsSection from './components/AdvancedSkillsSection';
+import { ThemeProvider } from './ThemeContext';
 
 function App() {
   useEffect(() => {
@@ -32,21 +33,23 @@ function App() {
         <Navbar />
 
         <Routes>
-          {/* 🏠 Home → Hero + About */}
+          {/* Default redirect: / → /home */}
+          <Route path="/" element={<Navigate to="/home" replace />} />
+
+          {/* 🏠 Home */}
           <Route
-            path="/"
+            path="/home"
             element={
               <>
                 <Hero />
                 <About />
-                <AdvancedSkillsSection/>
-                
-                
+                <AdvancedSkillsSection />
               </>
             }
           />
 
           {/* 📄 Other Pages */}
+          <Route path="/about" element={<About />} />
           <Route path="/skills" element={<Skills />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/experience" element={<Experience />} />

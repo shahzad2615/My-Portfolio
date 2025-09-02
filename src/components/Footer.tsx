@@ -351,7 +351,7 @@ const FloatingParticle = ({ delay, duration, startX, startY }) => (
                 <span className="ml-2 text-cyan-400">| Always learning, always growing</span>
               </div>
               
-              <button
+              {/* <button
                 onClick={scrollToTop}
                 className={`mt-4 md:mt-0 relative p-4 bg-gradient-to-r from-cyan-500 to-purple-600 rounded-full text-white hover:from-purple-600 hover:to-cyan-500 transition-all duration-500 transform hover:scale-110 hover:-translate-y-2 group glow-effect ${
                   isVisible ? 'translate-y-0 opacity-100' : 'translate-y-10 opacity-0'
@@ -360,7 +360,7 @@ const FloatingParticle = ({ delay, duration, startX, startY }) => (
               >
                 <ArrowUp size={24} className="group-hover:animate-bounce" />
                 <div className="absolute inset-0 rounded-full bg-white/20 scale-0 group-hover:scale-150 transition-transform duration-500" />
-              </button>
+              </button> */}
             </div>
           </div>
         </div>
