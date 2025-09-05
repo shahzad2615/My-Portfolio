@@ -15,6 +15,7 @@ import ScrollToTop from './components/ScrollToTop';
 import Preloader from './components/Preloader';
 import AdvancedSkillsSection from './components/AdvancedSkillsSection';
 import { ThemeProvider } from './ThemeContext';
+import Achievements from "./components/Achievements"
 
 function App() {
   useEffect(() => {
@@ -53,6 +54,8 @@ function App() {
           <Route path="/skills" element={<Skills />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/experience" element={<Experience />} />
+          <Route path="/achievements" element={<Achievements/>}/>
+
           <Route path="/contact" element={<Contact />} />
         </Routes>
 
