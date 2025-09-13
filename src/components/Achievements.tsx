@@ -191,7 +191,7 @@ const achievements: Achievement[] = [
 const stats: Stat[] = [
   { label: 'Problems Solved', value: 450, suffix: '+', icon: 'Code', color: 'from-blue-500 to-cyan-500' },
   { label: 'Projects Built', value: 8, suffix: '+', icon: 'Zap', color: 'from-purple-500 to-pink-500' },
-  { label: 'Contest Wins', value: 12, suffix: '+', icon: 'Trophy', color: 'from-yellow-500 to-orange-500' },
+  
   { label: 'Technologies', value: 15, suffix: '+', icon: 'Target', color: 'from-green-500 to-teal-500' }
 ];
 

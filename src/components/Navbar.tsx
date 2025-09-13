@@ -13,7 +13,6 @@ import {
   Sun,
   Moon,
 } from "lucide-react";
-
 const Navbar: React.FC = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);

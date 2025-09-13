@@ -441,7 +441,7 @@ const Experience = () => {
               whileInView={{ scale: 1 }}
               transition={{ duration: 0.8, type: "spring" }}
             >
-              Experience & Achievements
+              Experience 
             </motion.h2>
             
             <motion.div 
@@ -728,7 +728,6 @@ const Experience = () => {
                             ))}
                           </div>
                         </motion.div>
-
                         {/* Mobile Expand/Collapse for more details */}
                         {isMobile && (
                           <motion.button
@@ -793,7 +792,7 @@ const Experience = () => {
                   variants={cardVariants}
                   whileHover={!isMobile ? { 
                     y: -10, 
-                    scale: 1.05,
+                    scale: 1.05,    
                     transition: { type: "spring", stiffness: 300 }
                   } : {}}
                 >
@@ -839,7 +838,6 @@ const Experience = () => {
               ))}
             </motion.div>
           </motion.div>
-
           {/* Mobile Stats Section */}
           {isMobile && (
             <motion.div
@@ -914,8 +912,7 @@ const Experience = () => {
       </section>
     </div>
   );
-};
-
+};  
 // Main App Component with Theme Provider
 const App = () => {
   return (
@@ -924,5 +921,6 @@ const App = () => {
     </ThemeProvider>
   );
 };
+
 
 export default App

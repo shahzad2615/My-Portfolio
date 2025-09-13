@@ -347,7 +347,6 @@ const AdvancedSkillsSection = () => {
                     <h4 className="text-xl font-bold text-white mb-3 group-hover:text-transparent group-hover:bg-clip-text group-hover:bg-gradient-to-r group-hover:from-cyan-400 group-hover:to-purple-500 transition-all duration-300">
                       {skill.name}
                     </h4>
-
                     {/* Description */}
                     <p className="text-gray-400 text-sm mb-4 line-clamp-2">
                       {skill.description}
@@ -412,7 +411,6 @@ const AdvancedSkillsSection = () => {
             ))}
           </AnimatePresence>
         </motion.div>
-
         {/* Enhanced Stats Grid */}
         <motion.div
           className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mb-20"
@@ -517,9 +515,9 @@ const AdvancedSkillsSection = () => {
                 />
               </div>
             </motion.div>
+
           ))}
         </motion.div>
-
         {/* Enhanced Call to Action */}
         <motion.div
           className="text-center"
@@ -541,7 +539,6 @@ const AdvancedSkillsSection = () => {
                 ease: "linear"
               }}
             />
-            
             <div className="relative bg-black/50 backdrop-blur-xl rounded-3xl p-8 border border-white/20">
               <h4 className="text-2xl font-bold text-white mb-4">Ready to Build Something Amazing?</h4>
               <p className="text-gray-300 mb-8 max-w-md mx-auto">
@@ -561,6 +558,7 @@ const AdvancedSkillsSection = () => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
+
                   <motion.div
                     className="absolute inset-0 bg-gradient-to-r from-purple-500 to-cyan-500"
                     initial={{ x: '100%' }}
@@ -571,7 +569,6 @@ const AdvancedSkillsSection = () => {
                      View My Projects
                   </span>
                 </motion.button>
-                
                 <motion.button
                   className="px-8 py-4 border-2 border-cyan-400 text-cyan-400 font-semibold rounded-2xl hover:bg-cyan-400 hover:text-black transition-all duration-300 backdrop-blur-sm relative overflow-hidden group"
                   variants={itemVariants}
@@ -596,5 +593,4 @@ const AdvancedSkillsSection = () => {
     </motion.div>
   );
 };
-
 export default AdvancedSkillsSection;

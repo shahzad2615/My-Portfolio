@@ -455,9 +455,9 @@ const NeuronCursor: React.FC = () => {
                 fillOpacity={0.9 + particle.energy * 0.1}
               />
             </g>
+
           );
         })}
-
         {/* Interaction indicator: Desktop = hover only, Mobile = always visible */}
         {(isMobile || isInteracting) && (
           <motion.circle
@@ -478,7 +478,6 @@ const NeuronCursor: React.FC = () => {
           />
         )}
       </svg>
-
       {/* Mobile instruction overlay only */}
       {isMobile && !isInteracting && (
         <motion.div
@@ -490,7 +489,6 @@ const NeuronCursor: React.FC = () => {
           🌟 Auto-orbiting neurons • Touch for manual control
         </motion.div>
       )}
-
       {/* Responsive ambient particles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         {Array.from({ length: ambientParticleCount }, (_, i) => (
@@ -518,7 +516,6 @@ const NeuronCursor: React.FC = () => {
           />
         ))}
       </div>
-
       {/* Performance indicator for development */}
       {process.env.NODE_ENV === 'development' && (
         <div className="absolute bottom-4 left-4 text-xs text-gray-500 bg-black/50 px-2 py-1 rounded">

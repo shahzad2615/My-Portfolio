@@ -113,7 +113,7 @@ const Skills = () => {
       title: 'Community Leader',
       description: 'LinkedIn Influence',
       icon: Star,
-      count: '2.5K+',
+      count: '3.2K+',
       color: 'from-pink-400 to-rose-500',
       glow: 'shadow-pink-500/50'
     },
