@@ -46,12 +46,12 @@ const Skills = () => {
       color: 'from-emerald-400 via-teal-500 to-blue-500',
       accent: 'emerald',
       skills: [
-        { name: 'React.js', level: 90, years: 2, projects: 25 },
-        { name: 'Next.js', level: 85, years: 1, projects: 10 },
-        { name: 'Express.js', level: 80, years: 2, projects: 15 },
-        { name: 'Tailwind CSS', level: 90, years: 2, projects: 30 },
-        { name: '.NET', level: 75, years: 1, projects: 8 },
-        { name: 'Selenium', level: 70, years: 1, projects: 6 },
+        { name: 'React.js', level: 90, years: 1, projects: 15 },
+        { name: 'Next.js', level: 85, years: 1, projects: 8 },
+        { name: 'Express.js', level: 80, years: 1, projects: 15 },
+        { name: 'Tailwind CSS', level: 90, years: 1, projects: 30 },
+        { name: '.NET', level: 75, years: 1, projects: 1 },
+        { name: 'Selenium', level: 70, years: 1, projects: 1 },
       ],
     },
     {
@@ -60,12 +60,12 @@ const Skills = () => {
       color: 'from-orange-400 via-red-500 to-pink-500',
       accent: 'orange',
       skills: [
-        { name: 'MongoDB', level: 85, years: 2, projects: 18 },
-        { name: 'Firebase', level: 80, years: 1, projects: 12 },
-        { name: 'Git/GitHub', level: 90, years: 3, projects: 50 },
-        { name: 'VS Code', level: 95, years: 3, projects: 100 },
-        { name: 'IntelliJ', level: 80, years: 2, projects: 20 },
-        { name: 'Netbeans', level: 75, years: 2, projects: 15 },
+        { name: 'MongoDB', level: 85, years: 1, projects: 10 },
+        { name: 'Firebase', level: 80, years: 1, projects: 5 },
+        { name: 'Git/GitHub', level: 90, years: 1, projects: 50 },
+        { name: 'VS Code', level: 95, years: 1, projects: 100 },
+        { name: 'IntelliJ', level: 80, years: 1, projects: 10 },
+        { name: 'Netbeans', level: 75, years: 1, projects: 8 },
       ],
     },
     {
@@ -74,12 +74,12 @@ const Skills = () => {
       color: 'from-violet-400 via-purple-500 to-indigo-500',
       accent: 'violet',
       skills: [
-        { name: 'Data Structures & Algorithms', level: 85, years: 3, projects: 450 },
-        { name: 'Object-Oriented Programming', level: 90, years: 3, projects: 35 },
-        { name: 'REST APIs', level: 80, years: 2, projects: 22 },
-        { name: 'Responsive Design', level: 85, years: 2, projects: 40 },
-        { name: 'Problem Solving', level: 90, years: 4, projects: 500 },
-        { name: 'Team Collaboration', level: 85, years: 2, projects: 25 },
+        { name: 'Data Structures & Algorithms', level: 85, years: 2, projects: 450 },
+        { name: 'Object-Oriented Programming', level: 90, years: 2, projects: 5 },
+        { name: 'REST APIs', level: 80, years: 2, projects: 10 },
+        { name: 'Responsive Design', level: 85, years: 2, projects: 12 },
+        { name: 'Problem Solving', level: 90, years: 2, projects: 500 },
+        { name: 'Team Collaboration', level: 85, years: 2, projects: 10 },
       ],
     },
   ];
@@ -87,7 +87,7 @@ const Skills = () => {
   const achievements = [
     {
       title: 'Master Badge',
-      description: 'Coding Ninjas Elite',
+      description: 'Coding Ninjas ',
       icon: Trophy,
       count: '1',
       color: 'from-yellow-400 to-orange-500',
@@ -95,7 +95,7 @@ const Skills = () => {
     },
     {
       title: 'Coding Streaks',
-      description: 'LeetCode Champion',
+      description: 'LeetCode Badges',
       icon: Bolt,
       count: '150+',
       color: 'from-blue-400 to-purple-500',
@@ -103,15 +103,15 @@ const Skills = () => {
     },
     {
       title: 'Problem Solver',
-      description: 'DSA Master',
+      description: 'Data Structures & Algorithm (DSA)',
       icon: Brain,
       count: '450+',
       color: 'from-green-400 to-emerald-500',
       glow: 'shadow-green-500/50'
     },
     {
-      title: 'Community Leader',
-      description: 'LinkedIn Influence',
+      title: 'Tech Network',
+      description: 'LinkedIn Followers',
       icon: Star,
       count: '3.2K+',
       color: 'from-pink-400 to-rose-500',
@@ -418,7 +418,7 @@ const Skills = () => {
         {/* Fun Stats */}
         <div className="mt-16 text-center">
           <div className="grid grid-cols-2 sm:grid-cols-4 gap-6">
-            {[
+            {/* {[
               { label: 'Lines of Code', value: '50K+', icon: Code },
               { label: 'Projects Completed', value: '25+', icon: Rocket },
               { label: 'Technologies Mastered', value: '15+', icon: Zap },
@@ -433,7 +433,7 @@ const Skills = () => {
                 </div>
                 <div className="text-gray-400 text-sm">{stat.label}</div>
               </div>
-            ))}
+            ))} */}
           </div>
         </div>
       </div>

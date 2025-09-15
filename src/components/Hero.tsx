@@ -4,6 +4,10 @@ import { motion } from 'framer-motion';
 import { TypeAnimation } from 'react-type-animation';
 import { ArrowDown, Download, Github, Linkedin } from 'lucide-react';
 import NeuronCursor from './NeuronCursor'; // Import the responsive background
+import { Link } from 'react-router-dom';
+
+import { FaDownload } from 'react-icons/fa';
+
 
 const Hero: React.FC = () => {
   const handleDownloadResume = () => {
@@ -121,15 +125,18 @@ const Hero: React.FC = () => {
               />
             </motion.button>
 
-            <motion.a
-              href="#contact"
-              className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 border-2 border-cyan-400 text-cyan-400 rounded-lg font-semibold hover:bg-cyan-400 hover:text-black transition-all duration-300 text-center text-sm sm:text-base"
-              whileHover={{ scale: 1.05 }}
-              whileTap={{ scale: 0.95 }}
-            >
-              Hire Me
-            </motion.a>
-          </motion.div>
+            <motion.div>
+              <Link to="/hireme">
+                <motion.button
+                  className="w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 border-2 border-cyan-400 text-cyan-400 rounded-lg font-semibold hover:bg-cyan-400 hover:text-black transition-all duration-300 text-center text-sm sm:text-base"
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  Hire Me
+                </motion.button>
+              </Link>
+            </motion.div>
+          </motion.div> {/* ✅ Closing tag added */}
 
           {/* Responsive social icons */}
           <motion.div

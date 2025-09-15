@@ -44,11 +44,30 @@ const Projects: React.FC = () => {
       id: 1,
       title: 'CoderHub - All-in-One Coding Profile Aggregator',
       description: 'Revolutionary platform integrating LeetCode, GitHub, Codeforces, GeeksforGeeks into one unified dashboard. Features advanced analytics, coding streaks, leaderboards, and AI-powered insights for competitive programmers.',
-      image: 'https://images.pexels.com/photos/574071/pexels-photo-574071.jpeg?auto=compress&cs=tinysrgb&w=800',
-      tech: ['React 18', 'TypeScript', 'Vite', 'Tailwind CSS', 'Redux Toolkit', 'Node.js', 'Express.js', 'MongoDB', 'JWT', 'AI/ML'],
+      image: 'https://notesgallery.com/wp-content/uploads/2025/09/Off-Compus-Placement-5.png.webp',
+tech: [
+  'React 18',
+  'TypeScript',
+  'Vite',
+  'Tailwind CSS',
+  'Redux Toolkit',
+  'Framer Motion',
+  'Recharts',
+  'React Router',
+  'Node.js',
+  'Express.js',
+  'MongoDB',
+  'Mongoose',
+  'JWT Authentication',
+  'RESTful APIs',
+  'Rate Limiting & Security',
+  'Gemini Pro API',
+  'Custom Prompt Engineering',
+  'Intelligent Data Analysis'
+],
       category: 'Full Stack',
-      github: 'https://github.com/shahzad2615/coderhub',
-      demo: 'https://coderhub-demo.vercel.app',
+      github: 'https://github.com/shahzad2615/ProcodersHub.git',
+      demo: 'https://procoders-hub.vercel.app/',
       features: [
         'Multi-platform profile integration',
         'Real-time coding streak tracking',
@@ -65,10 +84,10 @@ const Projects: React.FC = () => {
       title: 'EasyCart E-commerce Platform',
       description: 'Enterprise-grade e-commerce solution with advanced product management, secure payment processing, real-time inventory tracking, and comprehensive admin dashboard. Built for scalability and performance.',
       image: 'https://images.pexels.com/photos/230544/pexels-photo-230544.jpeg?auto=compress&cs=tinysrgb&w=800',
-      tech: ['React.js', 'Tailwind CSS', 'Redux Toolkit', 'Firebase', 'Razorpay', 'Firestore', 'Authentication'],
+      tech: ['React.js', 'Tailwind CSS', 'Redux Toolkit', 'Firebase', 'Razorpay', 'Firestore', 'Authentication','Authorization'],
       category: 'E-commerce',
-      github: 'https://github.com/shahzad2615/easycart',
-      demo: 'https://easycart-demo.vercel.app',
+      github: 'https://github.com/shahzad2615/EasyCart_E-commerce.git',
+      demo: 'https://shahzadcart.netlify.app/',
       features: [
         'Advanced product filtering & search',
         'Secure payment gateway integration',
@@ -85,7 +104,7 @@ const Projects: React.FC = () => {
       title: 'Voting Machine System',
       description: 'Highly secure digital voting application with blockchain-inspired security, multi-layer authentication, real-time result visualization, and comprehensive audit trails for transparent democratic processes.',
       image: 'https://images.pexels.com/photos/1550337/pexels-photo-1550337.jpeg?auto=compress&cs=tinysrgb&w=800',
-      tech: ['MERN Stack', 'MongoDB', 'Express.js', 'React.js', 'Node.js', 'JWT', 'Encryption', 'Security'],
+      tech: [ 'MongoDB', 'Express.js', 'React.js', 'Node.js', 'JWT', 'Encryption', 'Security',"Postman"],
       category: 'Web Application',
       github: 'https://github.com/shahzad2615/voting-system',
       demo: 'https://voting-system-demo.herokuapp.com',
@@ -387,27 +406,22 @@ const Projects: React.FC = () => {
                 </p>
 
                 {/* Tech Stack */}
-                <div className="flex flex-wrap gap-2 mb-4">
-                  {project.tech.slice(0, 4).map((tech, techIndex) => (
-                    <span
-                      key={techIndex}
-                      className={`px-3 py-1 rounded-full text-xs font-medium transition-all duration-300 hover:scale-110 ${
-                        theme === 'dark' 
-                          ? 'bg-cyan-400/20 text-cyan-400 hover:bg-cyan-400/30' 
-                          : 'bg-blue-500/20 text-blue-600 hover:bg-blue-500/30'
-                      }`}
-                    >
-                      {tech}
-                    </span>
-                  ))}
-                  {project.tech.length > 4 && (
-                    <span className={`px-3 py-1 rounded-full text-xs font-medium ${
-                      theme === 'dark' ? 'bg-gray-700 text-gray-300' : 'bg-gray-200 text-gray-600'
-                    }`}>
-                      +{project.tech.length - 4} more
-                    </span>
-                  )}
-                </div>
+                {/* Tech Stack */}
+<div className="flex flex-wrap gap-2 mb-4">
+  {project.tech.map((tech, techIndex) => (
+    <span
+      key={techIndex}
+      className={`px-3 py-1 rounded-full text-xs font-medium transition-all duration-300 hover:scale-110 ${
+        theme === 'dark' 
+          ? 'bg-cyan-400/20 text-cyan-400 hover:bg-cyan-400/30' 
+          : 'bg-blue-500/20 text-blue-600 hover:bg-blue-500/30'
+      }`}
+    >
+      {tech}
+    </span>
+  ))}
+</div>
+
 
                 {/* Key Features */}
                 <div className="mb-6">

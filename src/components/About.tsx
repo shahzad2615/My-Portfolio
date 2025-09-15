@@ -5,8 +5,6 @@ import shaizuimage from "../components/shaizuimage.jpeg"
 import NeuronCursor from './NeuronCursor';
 
 // Mock NeuronCursor component (replace with your actual component)
-
-
 const About = () => {
   const [isHovered, setIsHovered] = useState(false);
   const [activeCard, setActiveCard] = useState(null);
@@ -89,7 +87,7 @@ const About = () => {
       icon: Facebook,
       url: 'https://www.facebook.com/share/14LFReFpnSD/',
       color: 'from-blue-500 to-blue-700',
-      stats: { label: 'Friends', value: '500+' },
+      stats: { label: 'Friends', value: '1.7k+' },
       description: 'Community & personal updates'
     }
   ];
@@ -337,14 +335,8 @@ const About = () => {
               <div>
                 <img src={shaizuimage} alt="shahzad image" />
               </div>
-
 {/* Profile Image Container */}
 
-
-
-
-
-              
               {/* Floating Info Badges */}
               <motion.div
                 className="absolute -top-2 -right-2 bg-gradient-to-r from-cyan-400 to-blue-500 text-white px-4 py-2 rounded-full text-sm font-semibold shadow-lg"
@@ -368,8 +360,6 @@ const About = () => {
                 Problem Solver
               </motion.div>
             </motion.div>
-          
-
           {/* Enhanced Content Section */}
           <motion.div
             className="space-y-8"

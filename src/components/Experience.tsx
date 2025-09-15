@@ -26,6 +26,13 @@ import {
   Palette,
   Settings
 } from 'lucide-react';
+import { Download } from 'lucide-react'; // ✅ import the icon
+ const handleDownloadResume = () => {
+    const link = document.createElement('a');
+    link.href = '/resume.pdf'; // Put resume.pdf in "public" folder
+    link.download = 'Shahzad_Ali_Resume.pdf';
+    link.click();
+  };
 
 // Theme Context
 const ThemeContext = createContext();
@@ -240,16 +247,15 @@ const Experience = () => {
       color: 'from-emerald-400 to-teal-600',
       icon: Code,
       achievements: [
-        'Developed 15+ dynamic web applications using MERN stack',
+        'Developed 7+ dynamic web applications using MERN stack',
         'Improved application performance by 40% through code optimization',
-        'Led a team of 3 junior developers on critical projects',
         'Implemented CI/CD pipelines reducing deployment time by 60%'
       ],
-      technologies: ['React.js', 'Node.js', 'MongoDB', 'Express.js', 'Next.js', 'TypeScript'],
+      technologies: ['React.js', 'Node.js', 'MongoDB', 'Express.js', 'Next.js', 'TypeScript',"Javascript","C++","java","Python",'Data Structures & Algorithm',"Postman",'Git',"Github","Deployment","Mysql","Problem Solving","JWT","Tailwind CSS",'RESTful APIs', 'Rate Limiting & Security' ,'Framer Motion','Gemini Pro API',"Vercel","Responsive"],
       highlights: [
         { icon: Users, text: 'Team Leadership', value: '3 developers' },
         { icon: Target, text: 'Performance Boost', value: '40%' },
-        { icon: Rocket, text: 'Projects Delivered', value: '15+' }
+        { icon: Rocket, text: 'Projects Delivered', value: '7+' }
       ],
       description: 'Leading full-stack development initiatives, architecting scalable solutions, and mentoring junior developers in modern web technologies.',
     },
@@ -270,10 +276,10 @@ const Experience = () => {
         'Created hands-on projects adopted by 3 other training centers',
         'Achieved 4.8/5 student satisfaction rating'
       ],
-      technologies: ['Java', 'SQL', 'MySQL', 'PostgreSQL', 'Spring Boot', 'Hibernate'],
+      technologies: ['Java', 'SQL', 'MySQL', 'PostgreSQL', 'Spring Boot', 'Hibernate',"Data Structures & Algorithm","C++","Python ","Problem Solving","Tech Resume Building","Web Development"],
       highlights: [
         { icon: Users, text: 'Students Trained', value: '50+' },
-        { icon: Star, text: 'Success Rate', value: '95%' },
+        { icon: Star, text: 'Success Rate', value: '90%' },
         { icon: Trophy, text: 'Satisfaction', value: '4.8/5' }
       ],
       description: 'Empowering the next generation of developers through comprehensive training programs and innovative teaching methodologies.',
@@ -290,16 +296,17 @@ const Experience = () => {
       color: 'from-cyan-400 to-blue-600',
       icon: GraduationCap,
       achievements: [
-        'Graduated with exceptional CGPA: 9.01/10',
-        'Led programming club with 100+ active members',
-        'Won 3 hackathons and 5 coding competitions',
-        'Published 2 research papers in tech journals'
-      ],
-      technologies: ['Data Structures', 'Algorithms', 'Database Design', 'Software Engineering'],
+  'Graduated with exceptional CGPA: 9.01/10',
+  'Mastered Data Structures & Algorithms',
+  'Developed Best Project: DSA Problem Solver',
+  'Recognized for Fast Coding Skills'
+],
+
+      technologies: ['Data Structures', 'Algorithms', 'Database Design', 'Software Engineering',"DBMS","MYSql","Computer Network ","Leadership Skills"],
       highlights: [
         { icon: Trophy, text: 'CGPA', value: '9.01/10' },
-        { icon: Award, text: 'Hackathons Won', value: '3' },
-        { icon: Users, text: 'Club Members', value: '100+' }
+        { icon: Award, text: 'Problem Solver (DSA)', value: '450+' },
+        { icon: Award, text: 'Best Project', value: '3+' }
       ],
       description: 'Excelled academically while actively contributing to the tech community through leadership and innovative projects.',
     }
@@ -441,7 +448,7 @@ const Experience = () => {
               whileInView={{ scale: 1 }}
               transition={{ duration: 0.8, type: "spring" }}
             >
-              Experience 
+              Experience & Education
             </motion.h2>
             
             <motion.div 
@@ -880,13 +887,21 @@ const Experience = () => {
               whileHover={{ scale: isMobile ? 1.02 : 1.05 }}
               whileTap={{ scale: 0.95 }}
             >
-              <motion.div
-                className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-              />
-              <span className="relative z-10 flex items-center gap-2 text-sm sm:text-base">
-                View Full Resume
-                <ArrowRight className="w-4 sm:w-5 h-4 sm:h-5 group-hover:translate-x-1 transition-transform" />
-              </span>
+              <div className="relative group inline-block">
+      {/* Hover gradient background */}
+      <motion.div
+        className="absolute inset-0 bg-gradient-to-r from-cyan-500 to-purple-500 opacity-0 group-hover:opacity-100 transition-opacity duration-300 rounded-lg"
+      />
+
+      {/* Resume button */}
+      <button
+        onClick={handleDownloadResume}
+        className="relative z-10 flex items-center justify-center space-x-2 px-4 py-2 rounded-lg bg-blue-600 text-white hover:bg-blue-700 transition"
+      >
+        <Download size={18} className="sm:w-5 sm:h-5" />
+        <span>View Full Resume</span>
+      </button>
+    </div>
             </motion.button>
           </motion.div>
 

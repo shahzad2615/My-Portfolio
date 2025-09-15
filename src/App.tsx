@@ -16,6 +16,7 @@ import Preloader from './components/Preloader';
 import AdvancedSkillsSection from './components/AdvancedSkillsSection';
 import { ThemeProvider } from './ThemeContext';
 import Achievements from "./components/Achievements"
+import Hireme from "./components/Hireme"
 
 function App() {
   useEffect(() => {
@@ -55,6 +56,7 @@ function App() {
           <Route path="/projects" element={<Projects />} />
           <Route path="/experience" element={<Experience />} />
           <Route path="/achievements" element={<Achievements/>}/>
+          <Route  path="/hireme" element={<Hireme/>}/>
 
           <Route path="/contact" element={<Contact />} />
         </Routes>
