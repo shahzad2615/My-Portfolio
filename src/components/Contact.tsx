@@ -1,5 +1,22 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { Mail, Phone, MapPin, Github, Linkedin, Code, Award, MessageCircle, Send, Copy, Check, Zap, Star, Globe, Terminal } from 'lucide-react';
+import { useForm, ValidationError } from '@formspree/react';
+import {
+  Mail,
+  Phone,
+  MapPin,
+  Github,
+  Linkedin,
+  Code,
+  Award,
+  MessageCircle,
+  Send,
+  Copy,
+  Check,
+  Zap,
+  Star,
+  Globe,
+  Terminal
+} from 'lucide-react';
 
 const Contact = () => {
   const [isVisible, setIsVisible] = useState(false);
@@ -10,9 +27,11 @@ const Contact = () => {
   const [particles, setParticles] = useState([]);
   const canvasRef = useRef(null);
 
+  // Formspree integration hook with form ID "xeozvqeo"
+  const [state, handleFormSubmit] = useForm("xeozvqeo");
+
   useEffect(() => {
     setIsVisible(true);
-    
     // Initialize floating particles
     const particleArray = [];
     for (let i = 0; i < 50; i++) {
@@ -27,16 +46,14 @@ const Contact = () => {
     }
     setParticles(particleArray);
 
-    // Mouse tracking for interactive effects
     const handleMouseMove = (e) => {
       setMousePosition({ x: e.clientX, y: e.clientY });
     };
     window.addEventListener('mousemove', handleMouseMove);
-    
+
     return () => window.removeEventListener('mousemove', handleMouseMove);
   }, []);
 
-  // Advanced particle animation
   useEffect(() => {
     const animateParticles = () => {
       setParticles(prev => prev.map(particle => ({
@@ -47,10 +64,16 @@ const Contact = () => {
         y: particle.y > window.innerHeight ? 0 : particle.y < 0 ? window.innerHeight : particle.y,
       })));
     };
-
     const interval = setInterval(animateParticles, 50);
     return () => clearInterval(interval);
   }, []);
+
+  // Clear form on successful submission
+  useEffect(() => {
+    if (state.succeeded) {
+      setFormData({ name: '', email: '', message: '' });
+    }
+  }, [state.succeeded]);
 
   const contactInfo = [
     {
@@ -89,7 +112,7 @@ const Contact = () => {
       url: 'https://linkedin.com/in/shahzad-ali-17584424b',
       color: 'hover:text-blue-400',
       bgGlow: 'hover:bg-blue-500/10',
-      followers: '2.5K+ followers'
+      followers: '3.7K+ followers'
     },
     {
       icon: Github,
@@ -123,12 +146,6 @@ const Contact = () => {
     setTimeout(() => setCopiedText(''), 2000);
   };
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    setFormData({ name: '', email: '', message: '' });
-  };
-
   const techStack = [
     { name: 'React.js', level: 95, color: 'from-cyan-400 to-blue-500' },
     { name: 'Node.js', level: 90, color: 'from-green-400 to-emerald-500' },
@@ -144,7 +161,7 @@ const Contact = () => {
       <div className="fixed inset-0 pointer-events-none">
         {/* Animated Grid */}
         <div className="absolute inset-0 bg-[linear-gradient(rgba(255,255,255,0.02)_1px,transparent_1px),linear-gradient(90deg,rgba(255,255,255,0.02)_1px,transparent_1px)] bg-[size:50px_50px] animate-pulse"></div>
-        
+
         {/* Floating Particles */}
         {particles.map((particle, index) => (
           <div
@@ -158,7 +175,7 @@ const Contact = () => {
             }}
           />
         ))}
-        
+
         {/* Mouse Follower Gradient */}
         <div
           className="absolute w-96 h-96 bg-gradient-to-r from-blue-500/10 via-purple-500/10 to-pink-500/10 rounded-full blur-3xl transition-all duration-300"
@@ -167,7 +184,7 @@ const Contact = () => {
             top: mousePosition.y - 192,
           }}
         />
-        
+
         {/* Geometric Shapes */}
         <div className="absolute top-20 left-20 w-32 h-32 border border-cyan-500/20 rotate-45 animate-spin-slow"></div>
         <div className="absolute bottom-40 right-20 w-24 h-24 border border-purple-500/20 rounded-full animate-bounce-slow"></div>
@@ -182,7 +199,7 @@ const Contact = () => {
               GET IN TOUCH
             </h1>
             <div className="absolute inset-0 bg-gradient-to-r from-cyan-400 via-purple-400 to-pink-400 blur-2xl opacity-20 animate-pulse"></div>
-            
+
             {/* Decorative Elements */}
             <div className="absolute -top-8 -left-8">
               <Terminal className="w-8 h-8 text-cyan-400 animate-bounce" />
@@ -191,7 +208,7 @@ const Contact = () => {
               <Zap className="w-8 h-8 text-purple-400 animate-pulse" />
             </div>
           </div>
-          
+
           <div className="max-w-3xl mx-auto mb-8">
             <p className="text-xl md:text-2xl text-gray-300 leading-relaxed mb-4">
               Ready to turn your vision into reality? Let's build something extraordinary together.
@@ -222,7 +239,7 @@ const Contact = () => {
               >
                 {/* Animated Background */}
                 <div className={`absolute inset-0 bg-gradient-to-br ${item.gradient} opacity-0 group-hover:opacity-5 transition-opacity duration-500`}></div>
-                
+
                 {/* Content */}
                 <div className="relative z-10">
                   <div className="flex items-start justify-between mb-4">
@@ -236,13 +253,13 @@ const Contact = () => {
                       }}
                       className="opacity-0 group-hover:opacity-100 transition-all duration-300 p-2 rounded-lg hover:bg-gray-800"
                     >
-                      {copiedText === item.value ? 
-                        <Check className="w-5 h-5 text-green-400" /> : 
+                      {copiedText === item.value ?
+                        <Check className="w-5 h-5 text-green-400" /> :
                         <Copy className="w-5 h-5 text-gray-400 hover:text-white" />
                       }
                     </button>
                   </div>
-                  
+
                   <h3 className="text-xl font-bold text-white mb-2">{item.label}</h3>
                   <p className="text-gray-300 group-hover:text-white transition-colors mb-2 font-medium">{item.value}</p>
                   <p className="text-sm text-gray-500 group-hover:text-gray-300 transition-colors">{item.description}</p>
@@ -270,7 +287,7 @@ const Contact = () => {
                     <h4 className="text-white font-semibold mb-1">{social.label}</h4>
                     <p className="text-xs text-gray-500">{social.followers}</p>
                   </div>
-                  
+
                   {/* Ripple Effect */}
                   <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/5 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></div>
                 </a>
@@ -283,7 +300,7 @@ const Contact = () => {
             {/* Contact Form */}
             <div className="relative overflow-hidden rounded-3xl bg-gray-900/40 backdrop-blur-xl border border-gray-800 p-8">
               <div className="absolute inset-0 bg-gradient-to-br from-blue-500/5 via-purple-500/5 to-pink-500/5"></div>
-              
+
               <div className="relative z-10">
                 <div className="flex items-center space-x-4 mb-8">
                   <div className="p-3 rounded-xl bg-gradient-to-r from-cyan-500 to-blue-500">
@@ -295,56 +312,74 @@ const Contact = () => {
                   </div>
                 </div>
 
-                <div className="space-y-6">
+                <form onSubmit={handleFormSubmit} className="space-y-6">
                   <div className="grid md:grid-cols-2 gap-6">
                     <div className="relative group">
                       <input
                         type="text"
+                        name="name"
                         placeholder="Your Name"
                         value={formData.name}
-                        onChange={(e) => setFormData({...formData, name: e.target.value})}
+                        onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                         className="w-full px-6 py-4 rounded-xl bg-gray-800/50 border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 focus:bg-gray-800 transition-all duration-300"
+                        required
                       />
                       <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-cyan-400/20 to-blue-400/20 opacity-0 group-focus-within:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                      <ValidationError prefix="Name" field="name" errors={state.errors} />
                     </div>
 
                     <div className="relative group">
                       <input
                         type="email"
+                        name="email"
                         placeholder="Your Email"
                         value={formData.email}
-                        onChange={(e) => setFormData({...formData, email: e.target.value})}
+                        onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                         className="w-full px-6 py-4 rounded-xl bg-gray-800/50 border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 focus:bg-gray-800 transition-all duration-300"
+                        required
                       />
                       <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-cyan-400/20 to-blue-400/20 opacity-0 group-focus-within:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                      <ValidationError prefix="Email" field="email" errors={state.errors} />
                     </div>
                   </div>
 
                   <div className="relative group">
                     <textarea
+                      name="message"
                       placeholder="Tell me about your project..."
                       value={formData.message}
-                      onChange={(e) => setFormData({...formData, message: e.target.value})}
+                      onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                       rows="6"
                       className="w-full px-6 py-4 rounded-xl bg-gray-800/50 border border-gray-700 text-white placeholder-gray-400 focus:outline-none focus:border-cyan-400 focus:bg-gray-800 transition-all duration-300 resize-none"
+                      required
                     ></textarea>
                     <div className="absolute inset-0 rounded-xl bg-gradient-to-r from-cyan-400/20 to-blue-400/20 opacity-0 group-focus-within:opacity-100 transition-opacity duration-300 pointer-events-none"></div>
+                    <ValidationError prefix="Message" field="message" errors={state.errors} />
                   </div>
 
                   <button
-                    onClick={handleSubmit}
+                    type="submit"
+                    disabled={state.submitting}
                     className="group relative w-full py-4 px-8 rounded-xl bg-gradient-to-r from-cyan-500 via-blue-500 to-purple-500 text-white font-bold text-lg overflow-hidden transition-all duration-500 hover:scale-[1.02] hover:shadow-2xl hover:shadow-blue-500/25"
                   >
                     <div className="flex items-center justify-center space-x-3">
                       <Send className="w-6 h-6 group-hover:translate-x-1 transition-transform duration-300" />
-                      <span>Send Message</span>
-                      <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                      <span>{state.submitting ? "Sending..." : "Send Message"}</span>
+                      {state.succeeded && (
+                        <div className="w-2 h-2 bg-green-400 rounded-full animate-pulse"></div>
+                      )}
                     </div>
-                    
+
                     {/* Animated Background */}
                     <div className="absolute inset-0 bg-gradient-to-r from-purple-600 via-pink-500 to-cyan-500 translate-x-full group-hover:translate-x-0 transition-transform duration-700"></div>
                   </button>
-                </div>
+                </form>
+
+                {state.succeeded && (
+                  <p className="text-green-400 mt-4 text-center">
+                    Thanks for your message! I'll get back to you soon.
+                  </p>
+                )}
               </div>
             </div>
 
@@ -354,7 +389,7 @@ const Contact = () => {
                 <Code className="w-7 h-7 mr-3 text-cyan-400" />
                 Tech Expertise
               </h3>
-              
+
               <div className="grid md:grid-cols-2 gap-6">
                 {techStack.map((tech, index) => (
                   <div key={index} className="group">
@@ -363,9 +398,9 @@ const Contact = () => {
                       <span className="text-gray-400">{tech.level}%</span>
                     </div>
                     <div className="h-2 bg-gray-800 rounded-full overflow-hidden">
-                      <div 
+                      <div
                         className={`h-full bg-gradient-to-r ${tech.color} transition-all duration-1000 group-hover:animate-pulse`}
-                        style={{ 
+                        style={{
                           width: `${tech.level}%`,
                           animationDelay: `${index * 200}ms`
                         }}
@@ -382,7 +417,7 @@ const Contact = () => {
         <div className={`mt-16 grid md:grid-cols-4 gap-6 transition-all duration-1500 delay-700 ${isVisible ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-20'}`}>
           {[
             { number: '450+', label: 'DSA Problems', icon: Code, color: 'from-green-400 to-emerald-500' },
-            { number: '2.5K+', label: 'LinkedIn Network', icon: Linkedin, color: 'from-blue-400 to-cyan-500' },
+            { number: '3.5K+', label: 'LinkedIn Network', icon: Linkedin, color: 'from-blue-400 to-cyan-500' },
             { number: '100+', label: 'Day Streak', icon: Zap, color: 'from-orange-400 to-red-500' },
             { number: '9.01', label: 'CGPA Score', icon: Star, color: 'from-purple-400 to-pink-500' }
           ].map((stat, index) => (
@@ -394,7 +429,7 @@ const Contact = () => {
                 </div>
                 <div className="text-gray-400 font-medium">{stat.label}</div>
               </div>
-              
+
               {/* Hover Glow */}
               <div className={`absolute inset-0 bg-gradient-to-r ${stat.color} opacity-0 group-hover:opacity-5 transition-opacity duration-500 rounded-2xl`}></div>
             </div>
@@ -421,5 +456,5 @@ const Contact = () => {
     </div>
   );
 };
-
 export default Contact;
+

@@ -53,23 +53,23 @@ const achievements: Achievement[] = [
     link: 'https://leetcode.com/profile',
     featured: true
   },
-  {
-    id: 2,
-    category: 'coding',
-    title: 'Competitive Programming Champion',
-    description: 'Active participant in prestigious coding competitions with outstanding performance in hackathons and contests.',
-    icon: 'Trophy',
-    technologies: ['C++', 'Python', 'Algorithms', 'Data Structures'],
-    highlights: [
-      'Top 20% in LeetCode contests',
-      'Winner in Coding Ninjas hackathons',
-      'Active in Google Kickstart competitions',
-      'Regular participant in Codeforces rounds'
-    ],
-    date: '2022-Present',
-    link: 'https://codeforces.com/profile',
-    featured: true
-  },
+  // {
+  //   id: 2,
+  //   category: 'coding',
+  //   title: 'Competitive Programming Champion',
+  //   description: 'Active participant in prestigious coding competitions with outstanding performance in hackathons and contests.',
+  //   icon: 'Trophy',
+  //   technologies: ['C++', 'Python', 'Algorithms', 'Data Structures'],
+  //   highlights: [
+  //     'Top 20% in LeetCode contests',
+  //     'Winner in Coding Ninjas hackathons',
+  //     'Active in Google Kickstart competitions',
+  //     'Regular participant in Codeforces rounds'
+  //   ],
+  //   date: '2022-Present',
+  //   link: 'https://codeforces.com/profile',
+  //   featured: true
+  // },
   {
     id: 3,
     category: 'development',
@@ -119,7 +119,7 @@ const achievements: Achievement[] = [
       'Built comprehensive algorithm comparison tool'
     ],
     date: '2022',
-    link: 'https://github.com/cube-solver'
+    link: 'https://github.com/shahzad2615/Rubik-s-Cube-Solver'
   },
   {
     id: 6,
@@ -136,7 +136,7 @@ const achievements: Achievement[] = [
       'Added advanced product filtering and search'
     ],
     date: '2023',
-    link: 'https://github.com/easycart',
+    link: 'https://github.com/shahzad2615/EasyCart_E-commerce',
     featured: true
   },
   {
